@@ -56,7 +56,7 @@ export default class Signin extends React.Component {
                   iconPosition="left"
                   name="email"
                   type="email"
-                  placeholder="UH E-mail address"
+                  placeholder="E-mail address"
                   onChange={this.handleChange}
                 />
                 <Form.Input

@@ -1,0 +1,40 @@
+.landing-background{
+  background: url('images/landing.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 650px;
+  border-bottom-style: none;
+}
+
+.landing-background-headphone-icon{
+  padding-top: 20%;
+  padding-left: 0px;
+  padding-right: 60px;
+  font-size: xx-large;
+  color: green;
+}
+
+.landing-background-upload-icon{
+  padding-top: 20%;
+  padding-left: 0px;
+  padding-right: 60px;
+  font-size: xx-large;
+  color: green;
+}
+
+.landing-background-profile-icon{
+  padding-top: 20%;
+  padding-left: 0px;
+  padding-right: 60px;
+  font-size: xx-large;
+  color: green;
+}
+
+.landing-background-discovered-icon{
+  padding-top: 20%;
+  padding-left: 0px;
+  padding-right: 60px;
+  font-size: xx-large;
+  color: green;
+}
+
+

@@ -1,12 +1,12 @@
 .landing-background{
-  background: url('images/landing.jpg') no-repeat center center fixed;
+  background: url('images/drums.jpg') no-repeat center center fixed;
   background-size: cover;
-  height: 650px;
+  height: 700px;
   border-bottom-style: none;
 }
 
 .landing-background-headphone-icon{
-  padding-top: 20%;
+  padding-top: 45%;
   padding-left: 0px;
   padding-right: 60px;
   font-size: xx-large;
@@ -14,7 +14,7 @@
 }
 
 .landing-background-upload-icon{
-  padding-top: 20%;
+  padding-top: 45%;
   padding-left: 0px;
   padding-right: 60px;
   font-size: xx-large;
@@ -22,7 +22,7 @@
 }
 
 .landing-background-profile-icon{
-  padding-top: 20%;
+  padding-top: 45%;
   padding-left: 0px;
   padding-right: 60px;
   font-size: xx-large;
@@ -30,7 +30,7 @@
 }
 
 .landing-background-discovered-icon{
-  padding-top: 20%;
+  padding-top: 45%;
   padding-left: 0px;
   padding-right: 60px;
   font-size: xx-large;

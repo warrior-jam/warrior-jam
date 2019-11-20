@@ -25,6 +25,8 @@ class Signup extends React.Component {
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
+      } else if (!email.includes('@hawaii.edu')) {
+        this.setState({ error: ''.concat(email, ' is not a valid UH email address.') });
       } else {
         this.setState({ error: '', redirectToReferer: true });
       }

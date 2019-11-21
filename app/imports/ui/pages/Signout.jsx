@@ -7,13 +7,9 @@ export default class Signout extends React.Component {
   render() {
     Meteor.logout();
     return (
-<<<<<<< Updated upstream
         <Header as="h2" textAlign="center" inverted>
           <p>You are signed out.</p>
         </Header>
-=======
-        
->>>>>>> Stashed changes
 
     );
   }

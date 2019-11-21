@@ -1,13 +1,30 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Table, Header, Loader } from 'semantic-ui-react';
+import { Container, Card, Header, Loader } from 'semantic-ui-react';
+import Musician from '/imports/ui/components/Musician';
 import { Stuffs } from '/imports/api/stuff/Stuff';
-import StuffItem from '/imports/ui/components/StuffItem';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class SearchMusician extends React.Component {
+
+  musicians = [{
+      name: 'Jason Mraz',
+      instrument: 'vocals and guitar',
+      genre: 'Reggae',
+    },
+    {
+      name: 'Michael Jackson',
+      instrument: 'vocals',
+      genre: 'Pop, Soul, Disco',
+    },
+    {
+      name: 'John Mayor',
+      instrument: 'vocals and guitar',
+      genre: 'Pop, Alternative, Blues',
+    }
+  ];
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -19,19 +36,9 @@ class SearchMusician extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center">Musicians</Header>
-          <Table celled>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Instrument</Table.HeaderCell>
-                <Table.HeaderCell>Genre</Table.HeaderCell>
-                <Table.HeaderCell>Edit</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {this.props.stuffs.map((stuff) => <StuffItem key={stuff._id} stuff={stuff} />)}
-            </Table.Body>
-          </Table>
+            <Card.Group>
+              {this.musicians.map((musician, index) => <Musician key={index} musician={musician}/>)}
+            </Card.Group>
         </Container>
     );
   }

@@ -5,34 +5,10 @@
   border-bottom-style: none;
 }
 
-.landing-background-headphone-icon{
+.landing-background-icon{
   padding-top: 45%;
   padding-left: 0px;
-  padding-right: 60px;
-  font-size: xx-large;
-  color: green;
-}
-
-.landing-background-upload-icon{
-  padding-top: 45%;
-  padding-left: 0px;
-  padding-right: 60px;
-  font-size: xx-large;
-  color: green;
-}
-
-.landing-background-profile-icon{
-  padding-top: 45%;
-  padding-left: 0px;
-  padding-right: 60px;
-  font-size: xx-large;
-  color: green;
-}
-
-.landing-background-discovered-icon{
-  padding-top: 45%;
-  padding-left: 0px;
-  padding-right: 60px;
+  padding-right: 0px;
   font-size: xx-large;
   color: green;
 }

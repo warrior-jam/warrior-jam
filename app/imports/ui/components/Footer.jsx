@@ -8,7 +8,10 @@ class Footer extends React.Component {
         <footer>
           <div style={divStyle} className="ui center aligned container">
             <hr />
-            <a href="https://warrior-jam.github.io./">Warrior Jam Home Page</a>
+            Warrior Jam <br />
+            University of Hawaii<br />
+            Honolulu, HI 96822 <br />
+            <a style={{ color: 'white' }} href="https://warrior-jam.github.io./">Warrior Jam Home Page</a>
           </div>
         </footer>
     );

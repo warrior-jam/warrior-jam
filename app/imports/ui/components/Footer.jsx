@@ -12,7 +12,7 @@ class Footer extends React.Component {
             Warrior Jam <br />
             University of Hawaii<br />
             Honolulu, HI 96822 <br />
-            <a href="https://warrior-jam.github.io./">Warrior Jam Home Page</a>
+            <a style={{ color: 'white' }} href="https://warrior-jam.github.io./">Warrior Jam Home Page</a>
           </div>
             </div>
         </footer>

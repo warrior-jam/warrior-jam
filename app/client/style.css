@@ -41,3 +41,10 @@
   color: white;
   padding-top: 20px;
 }
+
+.signout-background {
+  background: url('images/drums.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 662px;
+  border-bottom-style: none;
+}

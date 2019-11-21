@@ -6,6 +6,7 @@ class Footer extends React.Component {
     const divStyle = { paddingTop: '15px', color: 'white' };
     return (
         <footer>
+          <div style={divStyle} className="landing-footer">
           <div style={divStyle} className="ui center aligned container">
             <hr />
             Warrior Jam <br />
@@ -13,6 +14,7 @@ class Footer extends React.Component {
             Honolulu, HI 96822 <br />
             <a href="https://warrior-jam.github.io./">Warrior Jam Home Page</a>
           </div>
+            </div>
         </footer>
     );
   }

@@ -9,7 +9,7 @@ const Users = new Mongo.Collection('Users');
 const UserSchema = new SimpleSchema({
   firstName: String,
   lastName: String,
-  description: String,
+  about: String,
   facebookLink: String,
   instagramLink: String,
   youtubeLink: String,

@@ -15,8 +15,10 @@ const UserSchema = new SimpleSchema({
   youtubeLink: String,
   soundcloudLink: String,
   owner: String,
-  genres: [String],
-  instrumentsPlayed: [String],
+  genres: Array,
+  'genres.$': String,
+  instruments: Array,
+  'instruments.$': String,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

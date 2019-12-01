@@ -4,12 +4,12 @@ import { Grid, Segment, Header, Form } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
-import SelectField from 'uniforms-semantic/SelectField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import SimpleSchema from 'simpl-schema';
+import MultiSelectField from '../forms/controllers/MultiSelectField';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
@@ -18,19 +18,12 @@ const formSchema = new SimpleSchema({
   bio: { type: String, label: 'Biographical statement' },
   picture: String,
   projects: { type: String, label: 'Projects', optional: true },
-  skills: {
-    type: String,
-    allowedValues: ['vocals', 'guitar', 'drums', 'keyboard'],
-  },
-  genres: {
-    type: String,
-    allowedValues: ['jazz', 'rock', 'country', 'r&b'],
-  },
-  events: {
-    type: String,
-    allowedValues: ['meet1', 'meet2', 'meet3', 'meet4'],
-    optional: true,
-  },
+  skills: Array,
+  'skills.$': { type: String, allowedValues: ['vocals', 'guitar', 'drums', 'keyboard'] },
+  genres: Array,
+  'genres.$': { type: String, allowedValues: ['jazz', 'rock', 'country', 'r&b'] },
+  events: { type: Array, optional: true },
+  'events.$': { type: String, allowedValues: ['meet1', 'meet2', 'meet3', 'meet4'] },
 });
 
 /** Renders the Page for adding a document. */
@@ -70,9 +63,9 @@ class Home extends React.Component {
                   <TextField name='projects' optional={true} placeholder={'Link to Youtube or SoundCloud channel'}/>
                 </Form.Group>
                 <Form.Group widths={'equal'}>
-                  <SelectField name='skills' placeholder={'Skills'} />
-                  <SelectField name='genres' placeholder={'Genres'}/>
-                  <SelectField name='events' placeholder={'Events'}/>
+                  <MultiSelectField name='skills' placeholder={'Skills'}/>
+                  <MultiSelectField name='genres' placeholder={'Genres'}/>
+                  <MultiSelectField name='events' placeholder={'Events'}/>
                 </Form.Group>
                 <SubmitField value='Update'/>
               </Segment>

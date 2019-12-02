@@ -39,9 +39,9 @@ class Landing extends React.Component {
               <div className='landing-background-icon'>
                 <Icon size='huge' name='users'/>
                 <Header as='h1' inverted>CONNECT WITH OTHER MUSICIANS</Header>
-                <Header as='h3' inverted>Users can post and browse musical events (informal jam sessions and
+                <Header as='h3' inverted>Users can post and browse musical events (such as informal jam sessions and
                   band member auditions) happening in the UH community filtered by
-                  specific taste or participants.</Header>
+                  specific tastes or participants.</Header>
               </div>
             </Grid.Column>
 

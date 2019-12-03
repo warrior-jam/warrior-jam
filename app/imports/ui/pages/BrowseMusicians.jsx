@@ -7,7 +7,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class SearchMusician extends React.Component {
+class BrowseMusicians extends React.Component {
 
   musicians = [{
       name: 'Jason Mraz',
@@ -23,7 +23,7 @@ class SearchMusician extends React.Component {
       name: 'John Mayor',
       instrument: 'vocals and guitar',
       genre: 'Pop, Alternative, Blues',
-    }
+    },
   ];
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
@@ -45,7 +45,7 @@ class SearchMusician extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-SearchMusician.propTypes = {
+BrowseMusicians.propTypes = {
   stuffs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -58,4 +58,4 @@ export default withTracker(() => {
     stuffs: Stuffs.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(SearchMusician);
+})(BrowseMusicians);

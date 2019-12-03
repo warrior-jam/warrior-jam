@@ -35,7 +35,7 @@ class SearchMusician extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center">Musicians</Header>
+          <Header as="h2" textAlign="center" inverted>Musicians</Header>
             <Card.Group>
               {this.musicians.map((musician, index) => <Musician key={index} musician={musician}/>)}
             </Card.Group>

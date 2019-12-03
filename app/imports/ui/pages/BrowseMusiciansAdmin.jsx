@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { Musicians } from '../../api/musician/Musician';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class SearchMusicianAdmin extends React.Component {
+class BrowseMusiciansAdmin extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -28,7 +28,7 @@ class SearchMusicianAdmin extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-SearchMusicianAdmin.propTypes = {
+BrowseMusiciansAdmin.propTypes = {
   musicians: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -41,4 +41,4 @@ export default withTracker(() => {
     musicians: Musicians.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(SearchMusicianAdmin);
+})(BrowseMusiciansAdmin);

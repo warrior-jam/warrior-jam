@@ -2,13 +2,12 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Card, Header, Loader } from 'semantic-ui-react';
 import Musician from '/imports/ui/components/Musician';
-/**import { Stuffs } from '/imports/api/stuff/Stuff';*/
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Musicians } from '../../api/musician/Musician';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class SearchMusician extends React.Component {
+class BrowseMusicians extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -19,7 +18,7 @@ class SearchMusician extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center">Musicians</Header>
+          <Header as="h2" textAlign="center" inverted>Musicians</Header>
             <Card.Group>
               {this.props.musicians.map((musician, index) => <Musician key={index} musician={musician}/>)}
             </Card.Group>
@@ -29,7 +28,7 @@ class SearchMusician extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-SearchMusician.propTypes = {
+BrowseMusicians.propTypes = {
   musicians: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -42,4 +41,4 @@ export default withTracker(() => {
     musicians: Musicians.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(SearchMusician);
+})(BrowseMusicians);

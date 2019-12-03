@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List musician table. See pages/Listmusician.jsx. */
-class Musician extends React.Component {
+class MusicianAdmin extends React.Component {
   render() {
     return (
         <Card centered>
@@ -15,15 +15,18 @@ class Musician extends React.Component {
               {this.props.musician.instrument}
             </Card.Description>
           </Card.Content>
+          <Card.Content extra>
+            {this.props.musician.owner}
+          </Card.Content>
         </Card>
     );
   }
 }
 
 /** Require a document to be passed to this component. */
-Musician.propTypes = {
+MusicianAdmin.propTypes = {
   musician: PropTypes.object.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
-export default withRouter(Musician);
+export default withRouter(MusicianAdmin);

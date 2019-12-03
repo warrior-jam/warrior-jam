@@ -7,9 +7,11 @@ const Musicians = new Mongo.Collection('Musicians');
 
 /** Define a schema to specify the structure of each document in the collection. */
 const MusicianSchema = new SimpleSchema({
-  name: String,
+  firstName: String,
+  lastName: String,
   instrument: String,
   genre: String,
+  owner: String,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

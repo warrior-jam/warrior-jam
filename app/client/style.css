@@ -15,7 +15,11 @@
 
 .landing-footer{
   color: white;
-  padding-top: 20px;
+  background-color: green;
+  font-size: large;
+  border: none;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 

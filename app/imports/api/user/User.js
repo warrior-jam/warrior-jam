@@ -9,14 +9,16 @@ const Users = new Mongo.Collection('Users');
 const UserSchema = new SimpleSchema({
   firstName: String,
   lastName: String,
-  description: String,
+  about: String,
   facebookLink: String,
   instagramLink: String,
   youtubeLink: String,
   soundcloudLink: String,
   owner: String,
-  genres: [String],
-  instrumentsPlayed: [String],
+  genres: Array,
+  'genres.$': String,
+  instruments: Array,
+  'instruments.$': String,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

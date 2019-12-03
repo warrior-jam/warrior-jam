@@ -8,6 +8,8 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import SearchMusician from '../pages/SearchMusician';
+import SearchMusicianAdmin from '../pages/SearchMusicianAdmin';
+import AddStuff from '../pages/AddStuff';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import Home from '../pages/Home';
 import EditStuff from '../pages/EditStuff';
@@ -30,7 +32,7 @@ class App extends React.Component {
               <ProtectedRoute path="/list" component={SearchMusician}/>
               <ProtectedRoute path="/home" component={Home}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
-              <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
+              <AdminProtectedRoute path="/admin" component={SearchMusicianAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

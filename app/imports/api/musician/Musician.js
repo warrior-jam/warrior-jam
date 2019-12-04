@@ -16,7 +16,10 @@ const MusicianSchema = new SimpleSchema({
   skills: Array,
   'skills.$': { type: String, allowedValues: ['vocals', 'guitar', 'drums', 'keyboard'] },
   genres: Array,
-  'genres.$': { type: String, allowedValues: ['jazz', 'rock', 'country', 'r&b'] },
+  'genres.$': {
+    type: String, allowedValues: ['jazz', 'rock', 'country', 'r&b', 'reggae', 'pop', 'soul', 'disco', 'alternative',
+      'blues'],
+  },
   events: { type: Array, optional: true },
   'events.$': { type: String, allowedValues: ['meet1', 'meet2', 'meet3', 'meet4'] },
 }, { tracker: Tracker });

@@ -1,13 +1,101 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" }
+    {
+      "email": "admin@foo.com",
+      "password": "changeme",
+      "role": "admin"
+    },
+    {
+      "email": "john@foo.com",
+      "password": "changeme"
+    }
   ],
-
   "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+    {
+      "name": "Basket",
+      "quantity": 3,
+      "owner": "john@foo.com",
+      "condition": "excellent"
+    },
+    {
+      "name": "Bicycle",
+      "quantity": 2,
+      "owner": "john@foo.com",
+      "condition": "poor"
+    },
+    {
+      "name": "Banana",
+      "quantity": 2,
+      "owner": "admin@foo.com",
+      "condition": "good"
+    },
+    {
+      "name": "Boogie Board",
+      "quantity": 2,
+      "owner": "admin@foo.com",
+      "condition": "excellent"
+    }
+  ],
+  "defaultMusicians": [
+    {
+      "firstName": "Jason",
+      "lastName": "Mraz",
+      "owner": "john@foo.com",
+      "bio": "I am a singer-songwriter.",
+      "picture": "http://static1.squarespace.com/static/5cadf49751f4d4fb6d1b7494/t/5cf99fbd777b800001ad9aca/1559863230493/preview_press1_sharissecoulter.jpg?format=1500w",
+      "projects": "https://www.jasonmraz.com/",
+      "skills": [
+        "vocals",
+        "guitar"
+      ],
+      "genres": [
+        "reggae"
+      ],
+      "events": [
+        "meet1",
+        "meet2"
+      ]
+    },
+    {
+      "firstName": "Michael",
+      "lastName": "Jackson",
+      "owner": "john@foo.com",
+      "bio": "I am a singer, songwriter, and dancer.",
+      "picture": "https://www.biography.com/.image/t_share/MTE1ODA0OTcxMjkwNTYwMDEz/michael-jackson-pepsi-commercial-raw.jpg",
+      "projects": "https://www.michaeljackson.com/",
+      "skills": [
+        "vocals"
+      ],
+      "genres": [
+        "pop",
+        "soul",
+        "disco"
+      ],
+      "events": [
+        "meet1",
+        "meet2"
+      ]
+    },
+    {
+      "firstName": "John",
+      "lastName": "Mayer",
+      "owner": "john@foo.com",
+      "bio": "I am a singer-songwriter, guitarist, and record producer.",
+      "picture": "https://media.gq.com/photos/596d76c696d98d4091bcf4df/master/pass/John-Mayer-lede-cc.jpg",
+      "projects": "https://www.johnmayer.com/",
+      "skills": [
+        "vocals",
+        "guitar"
+      ],
+      "genres": [
+        "pop",
+        "alternative",
+        "blues"
+      ],
+      "events": [
+        "meet1",
+        "meet2"
+      ]
+    }
   ]
 }

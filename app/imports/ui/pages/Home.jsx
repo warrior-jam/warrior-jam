@@ -1,6 +1,6 @@
 import React from 'react';
 import { Musicians } from '/imports/api/musician/Musician';
-import { Grid, Segment, Header, Form } from 'semantic-ui-react';
+import { Form, Grid, Header, Segment } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
@@ -21,7 +21,10 @@ const formSchema = new SimpleSchema({
   skills: Array,
   'skills.$': { type: String, allowedValues: ['vocals', 'guitar', 'drums', 'keyboard'] },
   genres: Array,
-  'genres.$': { type: String, allowedValues: ['jazz', 'rock', 'country', 'r&b'] },
+  'genres.$': {
+    type: String, allowedValues: ['jazz', 'rock', 'country', 'r&b', 'reggae', 'pop', 'soul', 'disco', 'alternative',
+      'blues'],
+  },
   events: { type: Array, optional: true },
   'events.$': { type: String, allowedValues: ['meet1', 'meet2', 'meet3', 'meet4'] },
 });
@@ -34,14 +37,14 @@ class Home extends React.Component {
     const { firstName, lastName, bio, picture, projects, skills, genres, events } = data;
     const owner = Meteor.user().username;
     Musicians.insert({ firstName, lastName, bio, picture, projects, skills, genres, events, owner },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Profile updated successfully', 'success');
-          formRef.reset();
-        }
-      });
+        (error) => {
+          if (error) {
+            swal('Error', error.message, 'error');
+          } else {
+            swal('Success', 'Profile updated successfully', 'success');
+            formRef.reset();
+          }
+        });
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -51,7 +54,9 @@ class Home extends React.Component {
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center" inverted>Your Profile</Header>
-            <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)} >
+            <AutoForm ref={ref => {
+              fRef = ref;
+            }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
               <Segment>
                 <Form.Group widths={'equal'}>
                   <TextField name='firstName' placeholder={'First Name'}/>

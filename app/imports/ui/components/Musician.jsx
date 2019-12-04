@@ -12,6 +12,7 @@ class Musician extends React.Component {
           <Card.Content>
             <Image floated='right' size='tiny' src={this.props.musician.picture} />
             <Card.Header>{this.props.musician.firstName} {this.props.musician.lastName}</Card.Header>
+            <Card.Meta>{this.props.musician.title}</Card.Meta>
             <Card.Description>
               {this.props.musician.bio}
             </Card.Description>

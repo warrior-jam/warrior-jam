@@ -9,6 +9,7 @@ const Musicians = new Mongo.Collection('Musicians');
 const MusicianSchema = new SimpleSchema({
   firstName: String,
   lastName: String,
+  title: { type: String, allowedValues: ['Student', 'Faculty/Staff'] },
   bio: String,
   picture: String,
   projects: { type: String, optional: true },

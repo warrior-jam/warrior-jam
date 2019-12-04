@@ -3,6 +3,7 @@ import { Musicians } from '/imports/api/musician/Musician';
 import { Form, Grid, Header, Segment } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
+import SelectField from 'uniforms-semantic/SelectField';
 import LongTextField from 'uniforms-semantic/LongTextField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import swal from 'sweetalert';
@@ -15,6 +16,7 @@ import MultiSelectField from '../forms/controllers/MultiSelectField';
 const formSchema = new SimpleSchema({
   firstName: String,
   lastName: String,
+  title: { type: String, allowedValues: ['Student', 'Faculty/Staff'] },
   bio: { type: String, label: 'Biographical statement' },
   picture: String,
   projects: { type: String, label: 'Projects', optional: true },
@@ -34,9 +36,9 @@ class Home extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { firstName, lastName, bio, picture, projects, skills, genres, events } = data;
+    const { firstName, lastName, title, bio, picture, projects, skills, genres, events } = data;
     const owner = Meteor.user().username;
-    Musicians.insert({ firstName, lastName, bio, picture, projects, skills, genres, events, owner },
+    Musicians.insert({ firstName, lastName, title, bio, picture, projects, skills, genres, events, owner },
         (error) => {
           if (error) {
             swal('Error', error.message, 'error');
@@ -61,6 +63,7 @@ class Home extends React.Component {
                 <Form.Group widths={'equal'}>
                   <TextField name='firstName' placeholder={'First Name'}/>
                   <TextField name='lastName' placeholder={'Last Name'}/>
+                  <SelectField name='title' placeholder={'Student/Faculty/Staff'}/>
                 </Form.Group>
                 <LongTextField name='bio' placeholder='Write a little bit about yourself.'/>
                 <Form.Group widths={'equal'}>

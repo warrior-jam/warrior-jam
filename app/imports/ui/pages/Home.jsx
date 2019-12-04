@@ -19,7 +19,8 @@ const formSchema = new SimpleSchema({
   title: { type: String, allowedValues: ['Student', 'Faculty/Staff'] },
   bio: { type: String, label: 'Biographical statement' },
   picture: String,
-  projects: { type: String, label: 'Projects', optional: true },
+  youtube: { type: String, label: 'Youtube', optional: true },
+  soundcloud: { type: String, label: 'SoundCloud', optional: true },
   skills: Array,
   'skills.$': { type: String, allowedValues: ['vocals', 'guitar', 'drums', 'keyboard'] },
   genres: Array,
@@ -36,9 +37,9 @@ class Home extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { firstName, lastName, title, bio, picture, projects, skills, genres, events } = data;
+    const { firstName, lastName, title, bio, picture, youtube, soundcloud, skills, genres, events } = data;
     const owner = Meteor.user().username;
-    Musicians.insert({ firstName, lastName, title, bio, picture, projects, skills, genres, events, owner },
+    Musicians.insert({ firstName, lastName, title, bio, picture, youtube, soundcloud, skills, genres, events, owner },
         (error) => {
           if (error) {
             swal('Error', error.message, 'error');
@@ -68,7 +69,8 @@ class Home extends React.Component {
                 <LongTextField name='bio' placeholder='Write a little bit about yourself.'/>
                 <Form.Group widths={'equal'}>
                   <TextField name='picture' placeholder={'URL to picture'}/>
-                  <TextField name='projects' optional={true} placeholder={'Link to Youtube or SoundCloud channel'}/>
+                  <TextField name='youtube' optional={true} placeholder={'Link to Youtube channel'}/>
+                  <TextField name='soundcloud' optional={true} placeholder={'Link to SoundCloud'}/>
                 </Form.Group>
                 <Form.Group widths={'equal'}>
                   <MultiSelectField name='skills' placeholder={'Skills'}/>

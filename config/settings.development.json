@@ -44,7 +44,8 @@
       "owner": "john@foo.com",
       "bio": "I am a singer-songwriter.",
       "picture": "http://static1.squarespace.com/static/5cadf49751f4d4fb6d1b7494/t/5cf99fbd777b800001ad9aca/1559863230493/preview_press1_sharissecoulter.jpg?format=1500w",
-      "projects": "https://www.jasonmraz.com/",
+      "youtube": "https://www.youtube.com/",
+      "soundcloud": "https://www.soundcloud.com/",
       "skills": [
         "vocals",
         "guitar"
@@ -64,7 +65,8 @@
       "owner": "john@foo.com",
       "bio": "I am a singer, songwriter, and dancer.",
       "picture": "https://www.biography.com/.image/t_share/MTE1ODA0OTcxMjkwNTYwMDEz/michael-jackson-pepsi-commercial-raw.jpg",
-      "projects": "https://www.michaeljackson.com/",
+      "youtube": "https://www.youtube.com/",
+      "soundcloud": "https://www.soundcloud.com/",
       "skills": [
         "vocals"
       ],
@@ -85,7 +87,8 @@
       "owner": "john@foo.com",
       "bio": "I am a singer-songwriter, guitarist, and record producer.",
       "picture": "https://media.gq.com/photos/596d76c696d98d4091bcf4df/master/pass/John-Mayer-lede-cc.jpg",
-      "projects": "https://www.johnmayer.com/",
+      "youtube": "https://www.youtube.com/",
+      "soundcloud": "https://www.soundcloud.com/",
       "skills": [
         "vocals",
         "guitar"

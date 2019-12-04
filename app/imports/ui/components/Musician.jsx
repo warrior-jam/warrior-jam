@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Label } from 'semantic-ui-react';
+import { Card, Image, Label, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { _ } from 'meteor/underscore';
@@ -22,6 +22,11 @@ class Musician extends React.Component {
                 (skill, index) => <Label key={index}>{skill}</Label>)}
             {_.map(this.props.musician.genres,
                 (genre, index) => <Label key={index}>{genre}</Label>)}
+          </Card.Content>
+          {/* Need to fix so buttons link to this.props.musicians.youtube */}
+          <Card.Content extra>
+            <Button icon="youtube" color="youtube"/>
+            <Button icon="soundcloud" color="orange"/>
           </Card.Content>
         </Card>
     );

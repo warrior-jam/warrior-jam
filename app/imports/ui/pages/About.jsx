@@ -6,7 +6,7 @@ class About extends React.Component {
   render() {
     return (
       <Container fluid text>
-        <Header as="h2" textAlign="center" inverted>About Warrior Jam</Header>
+        <Header as="h2" textAlign="center">About Warrior Jam</Header>
         <p>Music has always been an one of the best ways to relieve stress and the university life is surely stressful.
             A lot of UH students also have musical talents, but there is no easy way for them to find
             others with similar tastes and compatible musical abilities. Thus, they cannot experience

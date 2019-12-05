@@ -26,14 +26,14 @@ class App extends React.Component {
             <NavBar/>
             <Switch>
               <Route exact path="/" component={Landing}/>
-              <Route path="/about" component={About}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
               <ProtectedRoute path="/home" component={Home}/>
+              <ProtectedRoute path="/about" component={About}/>
               <ProtectedRoute path="/musicians" component={BrowseMusicians}/>
-              <ProtectedRoute path="/edit/:_id" component={EditProfile}/>
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
+              <ProtectedRoute path="/edit" component={EditProfile}/>
               <Route component={NotFound}/>
             </Switch>
             <Footer/>

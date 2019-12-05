@@ -1,19 +1,30 @@
 import React from 'react';
+import { Segment, Container, List } from 'semantic-ui-react';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class Footer extends React.Component {
   render() {
-    const divStyle = { paddingTop: '15px', color: 'white' };
     return (
         <footer>
-          <div style={divStyle} className="landing-footer">
-          <div style={divStyle} className="ui center aligned container">
-            <hr />
-            Warrior Jam <br />
-            University of Hawaii<br />
-            Honolulu, HI 96822 <br />
-            <a style={{ color: 'white' }} href="https://warrior-jam.github.io./">Warrior Jam Home Page</a>
-          </div>
+            <div className='footer'>
+                <Segment vertical>
+                    <Container textAlign='center'>
+                        <List horizontal inverted divided link size='small'>
+                            <List.Item as='a' href='https://warrior-jam.github.io./'>
+                                © 2019 Warrior Jam
+                            </List.Item>
+                            <List.Item as='text'>
+                                University of Hawai&#39;i Honolulu, HI 96822
+                            </List.Item>
+                            <List.Item as='a' href='#/about'>
+                                About
+                            </List.Item>
+                            <List.Item as='a' href='#'>
+                                Contact Us
+                            </List.Item>
+                        </List>
+                    </Container>
+                </Segment>
             </div>
         </footer>
     );

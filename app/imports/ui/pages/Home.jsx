@@ -51,32 +51,34 @@ class Home extends React.Component {
   render() {
     let fRef = null;
     return (
-        <Grid container centered>
-          <Grid.Column>
-            <Header as="h2" textAlign="center" inverted>Your Profile</Header>
-            <AutoForm ref={ref => {
-              fRef = ref;
-            }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
-              <Segment>
-                <Form.Group widths={'equal'}>
-                  <TextField name='firstName' placeholder={'First Name'}/>
-                  <TextField name='lastName' placeholder={'Last Name'}/>
-                </Form.Group>
-                <LongTextField name='bio' placeholder='Write a little bit about yourself.'/>
-                <Form.Group widths={'equal'}>
-                  <TextField name='picture' placeholder={'URL to picture'}/>
-                  <TextField name='projects' optional={true} placeholder={'Link to Youtube or SoundCloud channel'}/>
-                </Form.Group>
-                <Form.Group widths={'equal'}>
-                  <MultiSelectField name='skills' placeholder={'Skills'}/>
-                  <MultiSelectField name='genres' placeholder={'Genres'}/>
-                  <MultiSelectField name='events' placeholder={'Events'}/>
-                </Form.Group>
-                <SubmitField value='Update'/>
-              </Segment>
-            </AutoForm>
-          </Grid.Column>
-        </Grid>
+        <div className='content'>
+          <Grid container centered>
+            <Grid.Column>
+              <Header as="h2" textAlign="center">Your Profile</Header>
+              <AutoForm ref={ref => {
+                fRef = ref;
+              }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
+                <Segment>
+                  <Form.Group widths={'equal'}>
+                    <TextField name='firstName' placeholder={'First Name'}/>
+                    <TextField name='lastName' placeholder={'Last Name'}/>
+                  </Form.Group>
+                  <LongTextField name='bio' placeholder='Write a little bit about yourself.'/>
+                  <Form.Group widths={'equal'}>
+                    <TextField name='picture' placeholder={'URL to picture'}/>
+                    <TextField name='projects' optional={true} placeholder={'Link to Youtube or SoundCloud channel'}/>
+                  </Form.Group>
+                  <Form.Group widths={'equal'}>
+                    <MultiSelectField name='skills' placeholder={'Skills'}/>
+                    <MultiSelectField name='genres' placeholder={'Genres'}/>
+                    <MultiSelectField name='events' placeholder={'Events'}/>
+                  </Form.Group>
+                  <SubmitField value='Update'/>
+                </Segment>
+              </AutoForm>
+            </Grid.Column>
+          </Grid>
+        </div>
     );
   }
 }

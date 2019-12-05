@@ -17,12 +17,14 @@ class BrowseMusicians extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <Container>
-          <Header as="h2" textAlign="center" inverted>Musicians</Header>
-            <Card.Group>
-              {this.props.musicians.map((musician, index) => <Musician key={index} musician={musician}/>)}
-            </Card.Group>
-        </Container>
+        <div className='content'>
+          <Container>
+            <Header as="h2" textAlign="center">Musicians</Header>
+              <Card.Group>
+                {this.props.musicians.map((musician, index) => <Musician key={index} musician={musician}/>)}
+              </Card.Group>
+          </Container>
+        </div>
     );
   }
 }

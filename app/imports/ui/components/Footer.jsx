@@ -1,5 +1,5 @@
 import React from 'react';
-import { Segment, Container, List, Divider } from 'semantic-ui-react';
+import { Segment, Container, List } from 'semantic-ui-react';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class Footer extends React.Component {
@@ -23,7 +23,6 @@ class Footer extends React.Component {
                                 Contact Us
                             </List.Item>
                         </List>
-
                     </Container>
                 </Segment>
             </div>

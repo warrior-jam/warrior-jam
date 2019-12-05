@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import BrowseMusicians from '../pages/BrowseMusicians';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
-import Home from '../pages/Home';
+import Profile from '../pages/Profile';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
@@ -27,7 +27,7 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
-              <ProtectedRoute path="/home" component={Home}/>
+              <ProtectedRoute path="/profile" component={Profile}/>
               <ProtectedRoute path="/musicians" component={BrowseMusicians}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>

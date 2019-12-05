@@ -30,7 +30,7 @@ const formSchema = new SimpleSchema({
 });
 
 /** Renders the Page for adding a document. */
-class Home extends React.Component {
+class Profile extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
@@ -83,4 +83,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Profile;

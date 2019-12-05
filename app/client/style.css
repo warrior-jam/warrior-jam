@@ -2,7 +2,9 @@
   background: url('images/drums.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 662px;
-  border-bottom-style: none;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
 }
 
 .landing-background-icon{
@@ -10,12 +12,12 @@
   padding-left: 0px;
   padding-right: 0px;
   font-size: xx-large;
-  color: green;
+  color: #024731;
 }
 
 .landing-footer{
-  color: white;
-  padding-top: 20px;
+  margin-top: 20px;
+  background-color: #024731;
 }
 
 

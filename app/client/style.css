@@ -15,18 +15,14 @@
   color: #024731;
 }
 
-.landing-footer{
-<<<<<<< HEAD
-  color: white;
-  background-color: green;
-  font-size: large;
-  border: none;
-  padding-top: 50px;
-  padding-bottom: 50px;
-=======
-  margin-top: 20px;
-  background-color: #024731;
->>>>>>> master
+.footer{
+  margin: 2em 0 0;
+  padding: 2em;
+  background: #024731;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 

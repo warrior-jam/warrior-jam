@@ -73,7 +73,7 @@ class Profile extends React.Component {
                     <MultiSelectField name='genres' placeholder={'Genres'}/>
                     <MultiSelectField name='events' placeholder={'Events'}/>
                   </Form.Group>
-                  <SubmitField value='Update'/>
+                  <SubmitField value='Submit'/>
                 </Segment>
               </AutoForm>
             </Grid.Column>

@@ -10,7 +10,7 @@ class Footer extends React.Component {
                 <Segment vertical>
                     <Container textAlign='center'>
                         <List horizontal inverted divided link size='small'>
-                            <List.Item as='a' href='https://warrior-jam.github.io./'>
+                            <List.Item as='a' href='https://warrior-jam.github.io/'>
                                 © 2019 Warrior Jam
                             </List.Item>
                             <List.Item as='text'>

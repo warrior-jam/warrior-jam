@@ -53,6 +53,54 @@
         "alternative",
         "blues"
       ]
+    },
+    {
+      "firstName": "Jason",
+      "lastName": "Mraz",
+      "owner": "jasonmraz@hawaii.edu",
+      "bio": "I am a singer-songwriter.",
+      "picture": "http://static1.squarespace.com/static/5cadf49751f4d4fb6d1b7494/t/5cf99fbd777b800001ad9aca/1559863230493/preview_press1_sharissecoulter.jpg?format=1500w",
+      "website": "https://www.jasonmraz.com/",
+      "skills": [
+        "vocals",
+        "guitar"
+      ],
+      "genres": [
+        "reggae"
+      ]
+    },
+    {
+      "firstName": "Michael",
+      "lastName": "Jackson",
+      "owner": "michaeljackson@hawaii.edu",
+      "bio": "I am a singer, songwriter, and dancer.",
+      "picture": "https://www.biography.com/.image/t_share/MTE1ODA0OTcxMjkwNTYwMDEz/michael-jackson-pepsi-commercial-raw.jpg",
+      "website": "https://www.michaeljackson.com/",
+      "skills": [
+        "vocals"
+      ],
+      "genres": [
+        "pop",
+        "soul",
+        "disco"
+      ]
+    },
+    {
+      "firstName": "John",
+      "lastName": "Mayer",
+      "owner": "johnmayer@hawaii.edu",
+      "bio": "I am a singer-songwriter, guitarist, and record producer.",
+      "picture": "https://media.gq.com/photos/596d76c696d98d4091bcf4df/master/pass/John-Mayer-lede-cc.jpg",
+      "projects": "https://www.johnmayer.com/",
+      "skills": [
+        "vocals",
+        "guitar"
+      ],
+      "genres": [
+        "pop",
+        "alternative",
+        "blues"
+      ]
     }
   ]
 }

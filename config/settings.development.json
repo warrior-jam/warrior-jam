@@ -1,62 +1,106 @@
 {
   "defaultAccounts": [
     {
-      "email": "admin@foo.com",
+      "email": "wjadmin@hawaii.edu",
       "password": "changeme",
       "role": "admin"
     },
     {
-      "email": "john@foo.com",
+      "email": "testuser@hawaii.edu",
       "password": "changeme"
     }
   ],
-  "defaultData": [
-    {
-      "name": "Basket",
-      "quantity": 3,
-      "owner": "john@foo.com",
-      "condition": "excellent"
-    },
-    {
-      "name": "Bicycle",
-      "quantity": 2,
-      "owner": "john@foo.com",
-      "condition": "poor"
-    },
-    {
-      "name": "Banana",
-      "quantity": 2,
-      "owner": "admin@foo.com",
-      "condition": "good"
-    },
-    {
-      "name": "Boogie Board",
-      "quantity": 2,
-      "owner": "admin@foo.com",
-      "condition": "excellent"
-    }
-  ],
+
   "defaultMusicians": [
+    {
+      "firstName": "Warrior Jam",
+      "lastName": "Admin",
+      "bio": "This is the administrator account of Warrior Jam.",
+      "picture": "https://i.pinimg.com/originals/1c/9d/27/1c9d27394d4685c110edb1b37dc87ade.jpg",
+      "owner": "wjadmin@hawaii.edu",
+      "skills": [],
+      "genres": []
+    },
+    {
+      "firstName": "Test",
+      "lastName": "User",
+      "bio": "This is a test user.",
+      "picture": "https://i.pinimg.com/originals/1c/9d/27/1c9d27394d4685c110edb1b37dc87ade.jpg",
+      "website": "https://warrior-jam.github.io/",
+      "owner": "testuser@hawaii.edu",
+      "youtube": "https://www.youtube.com/",
+      "soundcloud": "https://soundcloud.com/",
+      "skills": [
+        "vocals",
+        "guitar",
+        "drums",
+        "keyboard",
+        "dj",
+        "bass guitar",
+        "composition",
+        "producing music",
+        "songwriting"
+      ],
+      "genres": [
+        "jazz",
+        "rock",
+        "country",
+        "r&b",
+        "reggae",
+        "pop",
+        "soul",
+        "disco",
+        "alternative",
+        "blues"
+      ]
+    },
     {
       "firstName": "Jason",
       "lastName": "Mraz",
-      "instrument": "vocals and guitar",
-      "genre": "Reggae",
-      "owner": "john@foo.com"
+      "owner": "jasonmraz@hawaii.edu",
+      "bio": "I am a singer-songwriter.",
+      "picture": "http://static1.squarespace.com/static/5cadf49751f4d4fb6d1b7494/t/5cf99fbd777b800001ad9aca/1559863230493/preview_press1_sharissecoulter.jpg?format=1500w",
+      "website": "https://www.jasonmraz.com/",
+      "skills": [
+        "vocals",
+        "guitar"
+      ],
+      "genres": [
+        "reggae"
+      ]
     },
     {
       "firstName": "Michael",
       "lastName": "Jackson",
-      "instrument": "vocals",
-      "genre": "Pop, Soul, Disco",
-      "owner": "john@foo.com"
+      "owner": "michaeljackson@hawaii.edu",
+      "bio": "I am a singer, songwriter, and dancer.",
+      "picture": "https://www.biography.com/.image/t_share/MTE1ODA0OTcxMjkwNTYwMDEz/michael-jackson-pepsi-commercial-raw.jpg",
+      "website": "https://www.michaeljackson.com/",
+      "skills": [
+        "vocals"
+      ],
+      "genres": [
+        "pop",
+        "soul",
+        "disco"
+      ]
     },
     {
       "firstName": "John",
-      "lastName": "Mayor",
-      "instrument": "vocals and guitar",
-      "genre": "Pop, Alternative, Blues",
-      "owner": "admin@foo.com"
+      "lastName": "Mayer",
+      "owner": "johnmayer@hawaii.edu",
+      "bio": "I am a singer-songwriter, guitarist, and record producer.",
+      "picture": "https://media.gq.com/photos/596d76c696d98d4091bcf4df/master/pass/John-Mayer-lede-cc.jpg",
+      "projects": "https://www.johnmayer.com/",
+      "skills": [
+        "vocals",
+        "guitar"
+      ],
+      "genres": [
+        "pop",
+        "alternative",
+        "blues"
+      ]
     }
   ]
 }

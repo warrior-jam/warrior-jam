@@ -22,20 +22,22 @@ class Signup extends React.Component {
   /** Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
     const { email, password } = this.state;
-    Accounts.createUser({ email, username: email, password }, (err) => {
-      if (err) {
-        this.setState({ error: err.reason });
-      } else if (!email.includes('@hawaii.edu')) {
-        this.setState({ error: ''.concat(email, ' is not a valid UH email address.') });
-      } else {
-        this.setState({ error: '', redirectToReferer: true });
-      }
-    });
+    if (!email.includes('@hawaii.edu')) {
+      this.setState({ error: ''.concat(email, ' is not a valid UH email address.') });
+    } else {
+      Accounts.createUser({ email, username: email, password }, (err) => {
+        if (err) {
+          this.setState({ error: err.reason });
+        } else {
+          this.setState({ error: '', redirectToReferer: true });
+        }
+      });
+    }
   }
 
   /** Display the signup form. Redirect to add page after successful registration and login. */
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/add' } };
+    const { from } = this.props.location.state || { from: { pathname: '/createprofile' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
@@ -44,7 +46,7 @@ class Signup extends React.Component {
       <Container>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
-            <Header as="h2" textAlign="center" inverted>
+            <Header as="h2" textAlign="center">
               Register your account
             </Header>
             <Form onSubmit={this.submit}>

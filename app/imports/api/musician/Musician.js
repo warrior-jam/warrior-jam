@@ -14,14 +14,17 @@ const MusicianSchema = new SimpleSchema({
   projects: { type: String, optional: true },
   owner: String,
   skills: Array,
-  'skills.$': { type: String, allowedValues: ['vocals', 'guitar', 'drums', 'keyboard'] },
+  'skills.$': { type: String,
+    allowedValues:
+        ['vocals', 'guitar', 'drums', 'keyboard', 'dj', 'bass guitar', 'composition',
+          'producing music', 'songwriting'] },
   genres: Array,
   'genres.$': {
     type: String, allowedValues: ['jazz', 'rock', 'country', 'r&b', 'reggae', 'pop', 'soul', 'disco', 'alternative',
       'blues'],
   },
-  events: { type: Array, optional: true },
-  'events.$': { type: String, allowedValues: ['meet1', 'meet2', 'meet3', 'meet4'] },
+  /**events: { type: Array, optional: true },
+  'events.$': { type: String, allowedValues: ['meet1', 'meet2', 'meet3', 'meet4'] },**/
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

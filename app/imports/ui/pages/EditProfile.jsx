@@ -1,65 +1,86 @@
 import React from 'react';
-import { Musicians, MusicianSchema } from '/imports/api/musician/Musician';
-import { Form, Grid, Loader, Header, Segment } from 'semantic-ui-react';
+import { Grid, Loader, Header, Segment, Form } from 'semantic-ui-react';
+import swal from 'sweetalert';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
-import LongTextField from 'uniforms-semantic/LongTextField';
 import SubmitField from 'uniforms-semantic/SubmitField';
-import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
-import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
-import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
-import MultiSelectField from '../forms/controllers/MultiSelectField';
+import PropTypes from 'prop-types';
+import 'uniforms-bridge-simple-schema-2';
+import { Redirect } from 'react-router-dom';
+import LongTextField from 'uniforms-semantic/LongTextField';
+import { Musicians, MusicianSchema } from '../../api/musician/Musician';
+import MultiSelectField from '../forms/controllers/MultiSelectField'; // required for Uniforms
 
-/** Renders the Page for adding a document. */
+function getData(email) {
+  const data = Musicians.findOne({ email });
+  return data;
+}
+/** Renders the Page for editing a single document. */
 class EditProfile extends React.Component {
 
-  /** On submit, insert the data. */
+  constructor(props) {
+    super(props);
+    this.state = { redirectToReferer: false };
+  }
+
+  /** On successful submit, insert the data. */
   submit(data) {
-    const { firstName, lastName, bio, picture, projects, skills, genres, events, _id } = data;
-    Musicians.update(_id, { $set: { firstName, lastName, bio, picture, projects, skills, genres, events } },
+    const { firstName, lastName, bio, picture, youtube, soundcloud, website, skills, genres, _id } = data;
+    Musicians.update(_id, { $set: { firstName, lastName, bio, picture, youtube, soundcloud, website, skills, genres } },
         (error) => {
           if (error) {
             swal('Error', error.message, 'error');
           } else {
             swal('Success', 'Profile updated successfully', 'success');
+            this.setState({ error: '', redirectToReferer: true });
           }
         });
   }
 
+  /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
+  /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
+    const { from } = this.props.location.state || { from: { pathname: '/profile' } };
+    // if correct authentication, redirect to page instead of login screen
+    if (this.state.redirectToReferer) {
+      return <Redirect to={from}/>;
+    }
+    const email = Meteor.userId().email;
+    const thisUser = getData(email);
     return (
-        <div className='content'>
-          <Grid container centered>
-            <Grid.Column>
-              <Header as="h2" textAlign="center">Your Profile</Header>
-              <AutoForm schema={MusicianSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
-                <Segment>
-                  <Form.Group widths={'equal'}>
-                    <TextField name='firstName' placeholder={'First Name'}/>
-                    <TextField name='lastName' placeholder={'Last Name'}/>
-                  </Form.Group>
-                  <LongTextField name='bio' placeholder='Write a little bit about yourself.'/>
-                  <Form.Group widths={'equal'}>
-                    <TextField name='picture' placeholder={'URL to picture'}/>
-                    <TextField name='projects' optional={true} placeholder={'Link to Youtube or SoundCloud channel'}/>
-                  </Form.Group>
-                  <Form.Group widths={'equal'}>
-                    <MultiSelectField name='skills' placeholder={'Skills'}/>
-                    <MultiSelectField name='genres' placeholder={'Genres'}/>
-                    <MultiSelectField name='events' placeholder={'Events'}/>
-                  </Form.Group>
-                  <SubmitField value='Update'/>
-                </Segment>
-              </AutoForm>
-            </Grid.Column>
-          </Grid>
-        </div>
+        <Grid container centered>
+          <Grid.Column>
+            <Header as="h2" textAlign="center">Edit Profile</Header>
+            <AutoForm schema={MusicianSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
+              <Segment>
+                <Form.Group widths={'equal'}>
+                  <TextField name='firstName' defaultValue={thisUser.firstName}/>
+                  <TextField name='lastName' defaultValue={thisUser.lastName}/>
+                </Form.Group>
+                <LongTextField name='bio' defaultValue={thisUser.bio}/>
+                <Form.Group widths={'equal'}>
+                  <TextField name='picture' defaultValue={thisUser.picture}/>
+                  <TextField name='website' defaultValue={thisUser.website}/>
+                </Form.Group>
+                <Form.Group widths={'equal'}>
+                  <TextField name='youtube' defaultValue={thisUser.youtube}/>
+                  <TextField name='soundcloud' defaultValue={thisUser.soundcloud}/>
+                </Form.Group>
+                <Form.Group widths={'equal'}>
+                  <MultiSelectField name='skills'/>
+                  <MultiSelectField name='genres'/>
+                </Form.Group>
+                <SubmitField value='Submit'/>
+              </Segment>
+            </AutoForm>
+          </Grid.Column>
+        </Grid>
     );
   }
 }
@@ -69,6 +90,7 @@ EditProfile.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
+  location: PropTypes.object,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */

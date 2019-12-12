@@ -45,9 +45,9 @@ class CreateProfile extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { firstName, lastName, bio, picture, youtube, soundcloud, website, skills, genres, events } = data;
+    const { firstName, lastName, bio, picture, youtube, soundcloud, website, skills, genres } = data;
     const owner = Meteor.user().username;
-    Musicians.insert({ firstName, lastName, bio, picture, youtube, soundcloud, website, skills, genres, events, owner },
+    Musicians.insert({ firstName, lastName, bio, picture, youtube, soundcloud, website, skills, genres, owner },
         (error) => {
           if (error) {
             swal('Error', error.message, 'error');

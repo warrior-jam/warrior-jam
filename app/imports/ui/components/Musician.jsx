@@ -17,9 +17,11 @@ class Musician extends React.Component {
                     </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
-                    {_.map(this.props.musician.skills,
+                    Skills: {_.map(this.props.musician.skills,
                         (skill, index) => <Label key={index}>{skill}</Label>)}
-                    {_.map(this.props.musician.genres,
+                </Card.Content>
+                <Card.Content extra>
+                    Genres: {_.map(this.props.musician.genres,
                         (genre, index) => <Label key={index}>{genre}</Label>)}
                 </Card.Content>
             </Card>

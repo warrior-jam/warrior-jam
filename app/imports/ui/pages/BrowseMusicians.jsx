@@ -20,7 +20,7 @@ class BrowseMusicians extends React.Component {
             <div className='content'>
                 <Container>
                     <Header as="h2" textAlign="center">Musicians</Header>
-                    <Card.Group>
+                    <Card.Group itemsPerRow={4}>
                         {this.props.musicians.map((musician, index) => <Musician key={index} musician={musician}/>)}
                     </Card.Group>
                 </Container>
@@ -28,6 +28,7 @@ class BrowseMusicians extends React.Component {
         );
     }
 }
+
 /** Require an array of Stuff documents in the props. */
 BrowseMusicians.propTypes = {
     musicians: PropTypes.array.isRequired,
@@ -37,7 +38,7 @@ BrowseMusicians.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
     // Get access to Stuff documents.
-    const subscription = Meteor.subscribe('Musician');
+    const subscription = Meteor.subscribe('Musician2');
     return {
         musicians: Musicians.find({}).fetch(),
         ready: subscription.ready(),

@@ -23,8 +23,6 @@ const MusicianSchema = new SimpleSchema({
     type: String, allowedValues: ['jazz', 'rock', 'country', 'r&b', 'reggae', 'pop', 'soul', 'disco', 'alternative',
       'blues'],
   },
-  /**events: { type: Array, optional: true },
-  'events.$': { type: String, allowedValues: ['meet1', 'meet2', 'meet3', 'meet4'] },**/
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

@@ -25,12 +25,10 @@ const formSchema = new SimpleSchema({
     type: String, allowedValues: ['jazz', 'rock', 'country', 'r&b', 'reggae', 'pop', 'soul', 'disco', 'alternative',
       'blues'],
   },
-  events: { type: Array, optional: true },
-  'events.$': { type: String, allowedValues: ['meet1', 'meet2', 'meet3', 'meet4'] },
 });
 
 /** Renders the Page for adding a document. */
-class Profile extends React.Component {
+class CreateProfile extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
@@ -71,7 +69,6 @@ class Profile extends React.Component {
                   <Form.Group widths={'equal'}>
                     <MultiSelectField name='skills' placeholder={'Skills'}/>
                     <MultiSelectField name='genres' placeholder={'Genres'}/>
-                    <MultiSelectField name='events' placeholder={'Events'}/>
                   </Form.Group>
                   <SubmitField value='Submit'/>
                 </Segment>
@@ -83,4 +80,4 @@ class Profile extends React.Component {
   }
 }
 
-export default Profile;
+export default CreateProfile;

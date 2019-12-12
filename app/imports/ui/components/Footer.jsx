@@ -16,12 +16,6 @@ class Footer extends React.Component {
                             <List.Item as='text'>
                                 University of Hawai&#39;i Honolulu, HI 96822
                             </List.Item>
-                            <List.Item as='a' href='#/about'>
-                                About
-                            </List.Item>
-                            <List.Item as='a' href='#'>
-                                Contact Us
-                            </List.Item>
                         </List>
                     </Container>
                 </Segment>

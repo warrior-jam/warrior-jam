@@ -18,6 +18,7 @@ class About extends React.Component {
                 the opportunity to share your music content (YouTube, SoundCloud, etc.) By using our website, you can
                 find and meet different people who have the same goals as you do. Who knows? You could be the next
                 member of a band like Coldplay, Pink Floyd, Queen, and many more.</p>
+            <p>For more info: <a href='https://warrior-jam.github.io/'>Warrior Jam</a></p>
             <Header as="h3" textAlign="center">Developers</Header>
             <Card.Group centered stackable>
               <Card>

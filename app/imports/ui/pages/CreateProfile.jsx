@@ -9,17 +9,25 @@ import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import SimpleSchema from 'simpl-schema';
+import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
+
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
   firstName: String,
   lastName: String,
-  bio: { type: String, label: 'Biographical statement' },
+  bio: String,
   picture: String,
-  projects: { type: String, label: 'Projects', optional: true },
+  youtube: { type: String, optional: true, defaultValue: '' },
+  soundcloud: { type: String, optional: true, defaultValue: '' },
+  website: { type: String, optional: true, defaultValue: '' },
   skills: Array,
-  'skills.$': { type: String, allowedValues: ['vocals', 'guitar', 'drums', 'keyboard'] },
+  'skills.$': { type: String,
+    allowedValues:
+        ['vocals', 'guitar', 'drums', 'keyboard', 'dj', 'bass guitar', 'composition',
+          'producing music', 'songwriting'] },
   genres: Array,
   'genres.$': {
     type: String, allowedValues: ['jazz', 'rock', 'country', 'r&b', 'reggae', 'pop', 'soul', 'disco', 'alternative',
@@ -30,23 +38,34 @@ const formSchema = new SimpleSchema({
 /** Renders the Page for adding a document. */
 class CreateProfile extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { redirectToReferer: false };
+  }
+
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { firstName, lastName, bio, picture, projects, skills, genres, events } = data;
+    const { firstName, lastName, bio, picture, youtube, soundcloud, website, skills, genres, events } = data;
     const owner = Meteor.user().username;
-    Musicians.insert({ firstName, lastName, bio, picture, projects, skills, genres, events, owner },
+    Musicians.insert({ firstName, lastName, bio, picture, youtube, soundcloud, website, skills, genres, events, owner },
         (error) => {
           if (error) {
             swal('Error', error.message, 'error');
           } else {
             swal('Success', 'Profile updated successfully', 'success');
             formRef.reset();
+            this.setState({ error: '', redirectToReferer: true });
           }
         });
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
+    const { from } = this.props.location.state || { from: { pathname: '/profile' } };
+    // if correct authentication, redirect to page instead of login screen
+    if (this.state.redirectToReferer) {
+      return <Redirect to={from}/>;
+    }
     let fRef = null;
     return (
         <div className='content'>
@@ -64,7 +83,11 @@ class CreateProfile extends React.Component {
                   <LongTextField name='bio' placeholder='Write a little bit about yourself.'/>
                   <Form.Group widths={'equal'}>
                     <TextField name='picture' placeholder={'URL to picture'}/>
-                    <TextField name='projects' optional={true} placeholder={'Link to Youtube or SoundCloud channel'}/>
+                    <TextField name='website' optional={true} placeholder={'Link to Website'}/>
+                  </Form.Group>
+                  <Form.Group widths={'equal'}>
+                    <TextField name='youtube' optional={true} placeholder={'Link to Youtube channel'}/>
+                    <TextField name='soundcloud' optional={true} placeholder={'Link to Soundcloud feed'}/>
                   </Form.Group>
                   <Form.Group widths={'equal'}>
                     <MultiSelectField name='skills' placeholder={'Skills'}/>
@@ -79,5 +102,9 @@ class CreateProfile extends React.Component {
     );
   }
 }
+
+CreateProfile.propTypes = {
+  location: PropTypes.object,
+};
 
 export default CreateProfile;

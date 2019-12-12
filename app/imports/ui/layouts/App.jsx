@@ -10,6 +10,7 @@ import Landing from '../pages/Landing';
 import BrowseMusicians from '../pages/BrowseMusicians';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import CreateProfile from '../pages/CreateProfile';
+import Profile from '../pages/Profile';
 import EditProfile from '../pages/EditProfile';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
@@ -30,6 +31,7 @@ class App extends React.Component {
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
               <ProtectedRoute path="/createprofile" component={CreateProfile}/>
+              <ProtectedRoute path="/profile" component={Profile}/>
               <ProtectedRoute path="/musicians" component={BrowseMusicians}/>
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>

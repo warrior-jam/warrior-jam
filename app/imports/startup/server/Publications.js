@@ -43,3 +43,10 @@ Meteor.publish('Musician', function publish() {
   }
   return this.ready();
 });
+
+Meteor.publish('Musician2', function publish() {
+  if (this.userId) {
+    return Musicians.find();
+  }
+  return this.ready();
+});

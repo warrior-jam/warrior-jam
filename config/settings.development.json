@@ -19,8 +19,8 @@
       "picture": "https://i.pinimg.com/originals/1c/9d/27/1c9d27394d4685c110edb1b37dc87ade.jpg",
       "website": "https://warrior-jam.github.io/",
       "owner": "wjadmin@hawaii.edu",
-      "skills": [],
-      "genres": []
+      "skills": ["admin"],
+      "genres": ["admin"]
     },
     {
       "firstName": "Test",

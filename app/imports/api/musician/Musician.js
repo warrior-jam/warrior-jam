@@ -19,11 +19,11 @@ const MusicianSchema = new SimpleSchema({
   'skills.$': { type: String,
     allowedValues:
         ['vocals', 'guitar', 'drums', 'keyboard', 'dj', 'bass guitar', 'composition',
-          'producing music', 'songwriting'] },
+          'producing music', 'songwriting', 'admin'] },
   genres: Array,
   'genres.$': {
     type: String, allowedValues: ['jazz', 'rock', 'country', 'r&b', 'reggae', 'pop', 'soul', 'disco', 'alternative',
-      'blues'],
+      'blues', 'admin'],
   },
 }, { tracker: Tracker });
 

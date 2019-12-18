@@ -93,5 +93,14 @@
         "blues"
       ]
     }
+  ],
+  "defaultEvents": [
+    {
+      "name": "Band Members Audition",
+      "location": "Campus Center Courtyard",
+      "date": "December 17, 2019",
+      "description": "Looking for band members. We need a drummer and a guitarist.",
+      "owner": "wjadmin@hawaii.edu"
+    }
   ]
 }

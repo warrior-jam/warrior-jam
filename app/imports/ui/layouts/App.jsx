@@ -8,6 +8,8 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import BrowseMusicians from '../pages/BrowseMusicians';
+import BrowseEvents from '../pages/BrowseEvents';
+import AddEvent from '../components/AddEvent';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import CreateProfile from '../pages/CreateProfile';
 import Profile from '../pages/Profile';
@@ -33,6 +35,8 @@ class App extends React.Component {
                         <ProtectedRoute path="/createprofile" component={CreateProfile}/>
                         <ProtectedRoute path="/profile" component={Profile}/>
                         <ProtectedRoute path="/musicians" component={BrowseMusicians}/>
+                        <ProtectedRoute path="/events" component={BrowseEvents}/>
+                      <ProtectedRoute path="/addEvent" component={AddEvent}/>
                         <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
                         <ProtectedRoute path="/signout" component={Signout}/>
                         <ProtectedRoute path="/edit" component={EditProfile}/>

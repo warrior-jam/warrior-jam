@@ -18,6 +18,7 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import About from '../pages/About';
+import BrowseOpenMics from '../pages/BrowseOpenMics';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -35,6 +36,7 @@ class App extends React.Component {
                         <ProtectedRoute path="/profile" component={Profile}/>
                         <ProtectedRoute path="/musicians" component={BrowseMusicians}/>
                         <ProtectedRoute path="/events" component={BrowseEvents}/>
+                        <ProtectedRoute path="/openmic" component={BrowseOpenMics}/>
                         <ProtectedRoute path="/addEvent" component={AddEvent}/>
                         <ProtectedRoute path="/signout" component={Signout}/>
                         <ProtectedRoute path="/edit" component={EditProfile}/>

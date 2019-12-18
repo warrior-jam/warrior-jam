@@ -5,6 +5,7 @@ import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
 import SubmitField from 'uniforms-semantic/SubmitField';
+import ErrorsField from 'uniforms-semantic/ErrorsField';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
@@ -94,6 +95,7 @@ class CreateProfile extends React.Component {
                     <MultiSelectField name='genres' placeholder={'Genres'}/>
                   </Form.Group>
                   <SubmitField value='Submit'/>
+                  <ErrorsField/>
                 </Segment>
               </AutoForm>
             </Grid.Column>

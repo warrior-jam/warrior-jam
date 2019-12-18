@@ -13,11 +13,20 @@
 
   "defaultMusicians": [
     {
+      "firstName": "Warrior Jam",
+      "lastName": "Administrator",
+      "bio": "This is the warrior jam administrator. If there are any questions, comments, suggestions, please send us an e-mail at the contact information provided below.",
+      "picture": "https://i.pinimg.com/originals/1c/9d/27/1c9d27394d4685c110edb1b37dc87ade.jpg",
+      "website": "https://warrior-jam.github.io/",
+      "owner": "wjadmin@hawaii.edu",
+      "skills": [],
+      "genres": []
+    },
+    {
       "firstName": "Test",
       "lastName": "User",
       "bio": "This is a test user.",
       "picture": "https://i.pinimg.com/originals/1c/9d/27/1c9d27394d4685c110edb1b37dc87ade.jpg",
-      "website": "https://warrior-jam.github.io/",
       "owner": "testuser@hawaii.edu",
       "youtube": "https://www.youtube.com/",
       "soundcloud": "https://soundcloud.com/",

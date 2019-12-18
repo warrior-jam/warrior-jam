@@ -7,6 +7,7 @@ import { _ } from 'meteor/underscore';
 /** Renders a single row in the List musician table. See pages/Listmusician.jsx. */
 class Musician extends React.Component {
     render() {
+        const mailto = `mailto:${this.props.musician.owner}`;
         return (
             <Card>
                 <Card.Content>
@@ -23,6 +24,9 @@ class Musician extends React.Component {
                 <Card.Content extra>
                     Genres: {_.map(this.props.musician.genres,
                         (genre, index) => <Label key={index}>{genre}</Label>)}
+                </Card.Content>
+                <Card.Content extra>
+                    Contact: <a href={mailto}>{this.props.musician.owner}</a>
                 </Card.Content>
             </Card>
         );

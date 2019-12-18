@@ -2,6 +2,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Musicians } from '../../api/musician/Musician.js';
 import { Events } from '../../api/event/Event.js';
+import { OpenMics } from '../../api/openmic/OpenMic';
 
 /* eslint-disable no-console */
 
@@ -42,5 +43,18 @@ if (Events.find().count() === 0) {
   if (Meteor.settings.defaultEvents) {
     console.log('Creating default events.');
     Meteor.settings.defaultEvents.map(data => addEvent(data));
+  }
+}
+
+function addOpenMic(data) {
+  console.log(`  Adding: ${data.name} (${data.owner})`);
+  OpenMics.insert(data);
+}
+
+/** Initialize the collection if empty. */
+if (OpenMics.find().count() === 0) {
+  if (Meteor.settings.defaultOpenMics) {
+    console.log('Creating default open mic events.');
+    Meteor.settings.defaultOpenMics.map(data => addOpenMic(data));
   }
 }

@@ -4,6 +4,7 @@ import { Stuffs } from '../../api/stuff/Stuff';
 import { Users } from '../../api/user/User';
 import { Musicians } from '../../api/musician/Musician';
 import { Events } from '../../api/event/Event';
+import { OpenMics } from '../../api/openmic/OpenMic';
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Stuff', function publish() {
@@ -55,6 +56,13 @@ Meteor.publish('Musician2', function publish() {
 Meteor.publish('Events', function publish() {
   if (this.userId) {
     return Events.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish('OpenMic', function publish() {
+  if (this.userId) {
+    return OpenMics.find();
   }
   return this.ready();
 });

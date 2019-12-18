@@ -111,5 +111,31 @@
       "description": "Looking for band members. We need a drummer and a guitarist.",
       "owner": "wjadmin@hawaii.edu"
     }
+  ],
+  "defaultOpenMics": [
+    {
+      "name": "On Stage Drinks and Grinds",
+      "location": "802 Kapahulu Ave",
+      "description": "Kapahulu's laid back sports bar & nightly LIVE music venue! Featuring Blues, Country, Folk, Bluegrass, Light Rock, and Island Jams",
+      "website": "https://www.yelp.com/biz/on-stage-drinks-and-grinds-honolulu?osq=Open+Mic+Night",
+      "phoneNumber": "(808) 738-0004",
+      "owner": "wjadmin@hawaii.edu"
+    },
+    {
+      "name": "Surfers Coffee",
+      "location": "63 S Kamehameha Hwy",
+      "description": "Surfers Coffee is a neighborhood collective of volunteers and employees that exists to bring people together by providing a great atmosphere, amazing music and coffee of the highest quality. We are people committed to giving back as we promote self-expression, sustainability, creativity, innovation, social awareness, love and positive change in our local community.",
+      "website": "http://surferscoffee.com/",
+      "phoneNumber": "(808) 439-3644",
+      "owner": "wjadmin@hawaii.edu"
+    },
+    {
+      "name": "Ong King Arts Center",
+      "location": "1154 Fort Street Mall",
+      "description": "Holding space for the experimental expression of ART, MUSIC, DANCE and FELLOWSHIP\nas the Bohemian Heart Center of Honolulu's Chinatown since 2005",
+      "website": "https://ongkingarts.weebly.com/",
+      "phoneNumber": "(808) 450-8324",
+      "owner": "wjadmin@hawaii.edu"
+    }
   ]
 }

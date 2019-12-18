@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Card, Header, Loader, Button, Grid } from 'semantic-ui-react';
+import { Button, Card, Container, Header, Loader } from 'semantic-ui-react';
 import Event from '/imports/ui/components/Event';
 import { Events } from '/imports/api/event/Event';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -27,7 +27,7 @@ class BrowseEvents extends React.Component {
             <Card><Button as={NavLink} activeClassName="active" exact to="/addEvent" key='addEvent'>
               Add Event
             </Button>
-          </Card>
+            </Card>
           </Container>
         </div>
     );

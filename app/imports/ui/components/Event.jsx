@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Loader } from 'semantic-ui-react';
+import { Button, Card, Header, Loader } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -37,9 +37,6 @@ class Event extends React.Component {
             <Card.Description>
               {this.props.event.description}
             </Card.Description>
-            <Card.Meta>
-              Posted by {data.firstName} {data.lastName}
-            </Card.Meta>
           </Card.Content>
           <Button onClick={this.onButtonClickHandler}>Going</Button>
           {this.state.showMessage && <p> {data.firstName} {data.lastName} is going.</p>}
@@ -57,7 +54,7 @@ Event.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Musician2');
+  const subscription = Meteor.subscribe('Musician');
   return {
     ready: subscription.ready(),
   };

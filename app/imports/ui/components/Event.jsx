@@ -1,31 +1,64 @@
 import React from 'react';
-import { Card, Button } from 'semantic-ui-react';
+import { Button, Card, Loader } from 'semantic-ui-react';
+import { Meteor } from 'meteor/meteor';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Musicians } from '../../api/musician/Musician';
+
+function getData(email) {
+  const data = Musicians.findOne({ email });
+  return data;
+}
 
 /** Renders a single row in the List musician table. See pages/Listmusician.jsx. */
 class Event extends React.Component {
-    render() {
-        return (
-            <Card>
-                <Card.Content>
-                    <Card.Header>{this.props.event.name}</Card.Header>
-                  <Card.Meta>{this.props.event.location}</Card.Meta>
-                  <Card.Meta>{this.props.event.date}</Card.Meta>
-                    <Card.Description>
-                        {this.props.event.description}
-                    </Card.Description>
-                </Card.Content>
-              <Button>Sign Up</Button>
-            </Card>
-        );
-    }
+
+  state = {
+    showMessage: false,
+  }
+
+  onButtonClickHandler = () => {
+    this.setState({ showMessage: true });
+  };
+
+  render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
+
+  renderPage() {
+    const email = Meteor.userId().email;
+    const data = getData(email);
+    return (
+        <Card>
+          <Card.Content>
+            <Card.Header>{this.props.event.name}</Card.Header>
+            <Card.Meta>{this.props.event.location}</Card.Meta>
+            <Card.Meta>{this.props.event.date}</Card.Meta>
+            <Card.Description>
+              {this.props.event.description}
+            </Card.Description>
+            <Card.Meta>
+              Posted by {data.firstName} {data.lastName}
+            </Card.Meta>
+          </Card.Content>
+          <Button onClick={this.onButtonClickHandler}>Going</Button>
+          {this.state.showMessage && <p> {data.firstName} {data.lastName} is going.</p>}
+        </Card>
+    );
+  }
 }
 
 /** Require a document to be passed to this component. */
 Event.propTypes = {
-    event: PropTypes.object.isRequired,
+  event: PropTypes.object.isRequired,
+  ready: PropTypes.bool.isRequired,
 };
 
-/** Wrap this component in withRouter since we use the <Link> React Router element. */
-export default withRouter(Event);
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+export default withTracker(() => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe('Musician2');
+  return {
+    ready: subscription.ready(),
+  };
+})(Event);

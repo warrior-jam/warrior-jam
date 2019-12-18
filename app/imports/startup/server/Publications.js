@@ -3,6 +3,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Users } from '../../api/user/User';
 import { Musicians } from '../../api/musician/Musician';
+import { Events } from '../../api/event/Event';
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Stuff', function publish() {
@@ -47,6 +48,13 @@ Meteor.publish('Musician', function publish() {
 Meteor.publish('Musician2', function publish() {
   if (this.userId) {
     return Musicians.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish('Events', function publish() {
+  if (this.userId) {
+    return Events.find();
   }
   return this.ready();
 });
